@@ -14,7 +14,7 @@
 
 ```mermaid
 gantt
-title 2023 Learning C lanuage process🌰 (c)
+title 2023 Learning C lanuage process🌰 ©️
 dateFormat YYYY-MM-DD
 axisFormat %m-%d
 section semester1
