@@ -1,1 +1,1 @@
-# For practice types; calculations; expressions in C lanugage
+# Practice for advance types; calcuations; expressions
