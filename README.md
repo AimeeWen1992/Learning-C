@@ -1,26 +1,20 @@
 # Learning-C lanuage
-## Start up
+## Outline
 
 - Types; Calculations; Expressions
-  - [x] Basic
-  - [X] Advance
-
+  - Basic
+  - Advance
 - Logic expression
-  - [x] Basic
-  - [x] Advance 
-
+  - Basic
+  - Advance 
 - Array
-
 - Structures
-
 - Function
-
 - Pointer
-
 
 ```mermaid
 gantt
-title 2023 Learning C lanuage process🌰
+title 2023 Learning C lanuage process🌰 (c)
 dateFormat YYYY-MM-DD
 axisFormat %m-%d
 section semester1
