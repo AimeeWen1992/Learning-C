@@ -1,1 +1,1 @@
-# For practice basic TYPES; CALCULATIONS; EXPRESSIONS
+# Practice for basic TYPES; CALCULATIONS; EXPRESSIONS
