@@ -33,14 +33,15 @@ Basic:2023-01-18,7d
 gantt
 title Learning C lanuage process🌰
 
-dateFormat MM-DD
+%%
+axisFormat %Y-%m-%d %a
 
-section Types & Calculations & Expressions
-                                          Basic   :done,01-18,7d
-                                          Advance :01-25,7d
+section Types&Calculations&Expressions
+        Basic   :done,des1,01-18,7d
+        Advance :done,des2,afrer des1,7d
 
 section Logic expressions
-                                           Basic   :done,des1,02-01,7d
+        Basic   :done,des1,02-01,7d
         Advance :done,des2,after des1,7d
 
 section Array
