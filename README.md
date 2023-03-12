@@ -23,7 +23,7 @@ gantt
 title Learning C lanuage process
 dateFormat MM-DD
 
-section Types Calculations; Expressions
+section Types
 Basic:2023-01-18,7d
 
 ```
@@ -33,7 +33,7 @@ title Learning C lanuage process🌰
 
 dateFormat MM-DD
 
-section Types Calculations; Expressions
+section Types_Calculations_Expressions
 項目啓動 :done,des1,03-09,7d
 項目計劃 :done,des2,after des1,6d
 需求分析 :done,des3,after des2,9d
