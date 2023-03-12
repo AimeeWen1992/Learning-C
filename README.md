@@ -35,8 +35,8 @@ title Learning C lanuage process🌰
 dateFormat YYYY-mm-dd
 
 section Types&Calculations&Expressions
-        Basic   :done,des1,01-18,7d
-        Advance :done,des2,afrer des1,7d
+        Basic   :done,01-18,7d
+        Advance :done,01-25,7d
 
 section Logic expressions
         Basic   :done,des1,02-01,7d
