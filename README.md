@@ -32,8 +32,7 @@ Basic:2023-01-18,7d
 ```mermaid
 gantt
 title Learning C lanuage process🌰
-
-%%axisFormat %Y-%m-%d %a
+dateFormat YYYY-mm-dd
 
 section Types&Calculations&Expressions
         Basic   :done,des1,01-18,7d
