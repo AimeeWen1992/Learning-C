@@ -17,7 +17,7 @@
 
 - Pointer
 
-```
+```mermaid
 
 gantt
 title Learning C lanuage process
@@ -27,6 +27,8 @@ section Types
 Basic:2023-01-18,7d
 
 ```
+
+
 ```mermaid
 gantt
 title Learning C lanuage process🌰
