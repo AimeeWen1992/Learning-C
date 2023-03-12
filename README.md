@@ -12,9 +12,11 @@
 - Function
 - Pointer
 
+
+## Gantt🌰
 ```mermaid
 gantt
-title 2023 Learning C lanuage process🌰 
+title 2023 Learning C lanuage process 
 dateFormat YYYY-MM-DD
 axisFormat %m-%d
 
