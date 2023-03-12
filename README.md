@@ -33,7 +33,7 @@ Basic:2023-01-18,7d
 gantt
 title 2023 Learning C lanuage process🌰
 dateFormat YYYY-MM-DD
-axisFormat %m-%d %a
+axisFormat %m-%d
 section semester1
         C lanuage    :active,01-09,100d
 section Foundation          
