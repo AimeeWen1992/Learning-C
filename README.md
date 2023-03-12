@@ -32,9 +32,8 @@ Basic:2023-01-18,7d
 ```mermaid
 gantt
 title 2023 Learning C lanuage process🌰
-dateFormat MM-DD
+dateFormat YYYY-MM-DD
 axisFormat %m-%d %a
-excludes weekends
 section semester1
         C lanuage    :active,01-09,100d
 section Foundation          
