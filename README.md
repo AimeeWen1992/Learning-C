@@ -37,7 +37,7 @@ dateFormat MM-DD
 
 section Types & Calculations & Expressions
 Basic :done,01-18,7d
-Advance :done,01-25,7d
+Advance :01-25,7d
 
 section Logic expressions
 Basic :done,des1,02-01,7d
