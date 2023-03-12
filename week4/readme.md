@@ -1,1 +1,1 @@
-# Practice for LOGIC expressions
+# Practice for basic LOGIC expressions
