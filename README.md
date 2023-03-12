@@ -34,9 +34,9 @@ section Array
 section Structures
  ❣   :done,03-08,7d
 
-section Founction
- ❣   :03-15,14d
+section Function
+ ❣   :active,03-15,14d
 
 section Pointer
- ❣   :03-15,14d
+ ❣   :active,03-15,14d
 ```
