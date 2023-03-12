@@ -29,12 +29,12 @@ Basic   :done,02-01,7d
 Advance :done,02-08,7d
 
 section Array
-❤️      :active,02-15,7d
+❤️      :done,02-15,7d
 
 section Structures
 ❤️      :done,03-08,7d
 
-section Fountion
-This is function:03-08,7d
+section Founction
+founction section:03-08,7d
 
 ```
