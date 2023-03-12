@@ -32,13 +32,13 @@ Basic:2023-01-18,7d
 ```mermaid
 gantt
 title 2023 Learning C lanuage process🌰
-%%dateFormat yyyy-mm-dd
+dateFormat MM-DD
 section Foundation          
-        Types        :done,2023-01-18,14d
-        Calculations :done,2023-01-18,14d
-        Expressions  :done,2023-01-18,14d
-        Basic   :done,2023-01-18,7d
-        Advance :done,2023-01-25,7d
+        Types        :done,01-18,14d
+        Calculations :done,01-18,14d
+        Expressions  :done,01-18,14d
+        Basic   :done,01-18,7d
+        Advance :done,01-25,7d
 
 section Logic expressions
         Basic   :done,des1,02-01,7d
