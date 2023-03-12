@@ -33,6 +33,8 @@ Basic:2023-01-18,7d
 gantt
 title 2023 Learning C lanuage process🌰
 dateFormat MM-DD
+section semester1
+        C lanuage    :active,01-09,100d
 section Foundation          
         Types        :done,01-18,14d
         Calculations :done,01-18,14d
