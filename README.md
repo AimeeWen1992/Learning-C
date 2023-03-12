@@ -20,8 +20,8 @@ axisFormat %m-%d
 section semester1
         ❤️      :active,01-09,100d
 section Types<br />Calculations<br />Expressions
-        ❤️Basic   :done,01-18,7d
-        ❤️Advance :done,01-25,7d
+        Basic    :done,01-18,7d
+        Advance :done,01-25,7d
 
 section Logic expressions
         ❤️Basic   :done,02-01,7d
