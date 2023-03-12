@@ -13,7 +13,7 @@
 - Pointer
 
 
-## Gantt Chart🌰
+## Gantt Chart
 ```mermaid
 gantt
 title 2023 Learning C lanuage process 
