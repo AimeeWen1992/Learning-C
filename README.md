@@ -20,8 +20,9 @@
 ```
 
 gantt
-dateFormat YYYY-MM-DD
 title Learning C lanuage process
+dateFormat MM-DD
+
 section Types; Calculations; Expressions
 Basic:2023-01-18,7d
 
