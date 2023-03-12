@@ -17,17 +17,6 @@
 
 - Pointer
 
-```mermaid
-
-gantt
-title Learning C lanuage process
-dateFormat MM-DD
-
-section Types
-Basic:2023-01-18,7d
-
-```
-
 
 ```mermaid
 gantt
