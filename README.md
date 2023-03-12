@@ -32,7 +32,7 @@ Basic:2023-01-18,7d
 ```mermaid
 gantt
 title 2023 Learning C lanuage process🌰
-%%dateFormat mm-dd
+%%dateFormat yyyy-mm-dd
 section Foundation          
         Types        :done,2023-01-18,14d
         Calculations :done,2023-01-18,14d
