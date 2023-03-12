@@ -28,7 +28,7 @@ section Logic expressions
         Advance :done,des2,after des1,7d
 
 section Array
-        ⚠️　　　:done,02-15,7d
+        ⚠️:done,02-15,7d
 
 section Structures
         structures :done,03-08,7d
