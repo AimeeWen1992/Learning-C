@@ -36,7 +36,9 @@ dateFormat YYYY-MM-DD
 axisFormat %m-%d
 section semester1
         .            :active,01-09,100d
-section Foundation          
+section Types\nFoundation          
+        Calculations
+        Expressions
         Types        :done,01-18,14d
         Calculations :done,01-18,14d
         Expressions  :done,01-18,14d
