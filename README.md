@@ -24,8 +24,8 @@ section Types<br />Calculations<br />Expressions
         ❤️Advance :done,01-25,7d
 
 section Logic expressions
-        ❤️Basic   :done,des1,02-01,7d
-        ❤️Advance :done,des2,after des1,7d
+        ❤️Basic   :done,02-01,7d
+        ❤️Advance :done,02-08,7d
 
 section Array
         ❤️      :done,02-15,7d
