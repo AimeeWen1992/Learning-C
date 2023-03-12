@@ -12,8 +12,7 @@
 - Function
 - Pointer
 
-```mermaid
-gantt
+```gantt
 title 2023 Learning C lanuage process🌰 
 dateFormat YYYY-MM-DD
 axisFormat %m-%d
