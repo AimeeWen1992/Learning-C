@@ -33,7 +33,7 @@ Basic:2023-01-18,7d
 gantt
 title Learning C lanuage process🌰
 
-%%
+%%dateFormat
 axisFormat %Y-%m-%d %a
 
 section Types&Calculations&Expressions
