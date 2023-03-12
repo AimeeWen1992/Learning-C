@@ -17,7 +17,6 @@ gantt
 title 2023 Learning C lanuage process🌰 
 dateFormat YYYY-MM-DD
 axisFormat %m-%d
-exclude weekends
 
 section semester1
         ❤️:active,01-09,100d
@@ -30,7 +29,7 @@ Basic   :done,02-01,7d
 Advance :done,02-08,7d
 
 section Array
-❤️      :done,02-15,7d
+❤️      :active,02-15,7d
 
 section Structures
 ❤️      :done,03-08,7d
