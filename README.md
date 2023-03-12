@@ -35,7 +35,7 @@ title 2023 Learning C lanuage process🌰
 dateFormat YYYY-MM-DD
 axisFormat %m-%d
 section semester1
-                     :active,01-09,100d
+        .            :active,01-09,100d
 section Foundation          
         Types        :done,01-18,14d
         Calculations :done,01-18,14d
