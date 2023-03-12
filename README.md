@@ -42,6 +42,6 @@ Advance :done,des2,after des1,7d
 section Array
 array :done,02-15,7d
 section Structures
-軟件測試 :done,03-01,7d
-項目交付 :des7,after des6,4d
+structures :done,03-08,7d
+
 ```
