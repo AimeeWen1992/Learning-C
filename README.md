@@ -1,3 +1,3 @@
 # Learning-C lanuage
-Start up
+## Start up
 - [x] types; calculations; expressions
