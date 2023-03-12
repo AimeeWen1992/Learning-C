@@ -31,14 +31,14 @@ Basic   :done,02-01,7d
 Advance :done,02-08,7d
 
 section Array
- ❣   :done,02-15,7d
+       ➙:done,02-15,7d
 
 section Structures
- ❣   :done,03-08,7d
+ ➙      :done,03-08,7d
 
 section Function
- ❣   :active,03-15,14d
+ ➙   :active,03-15,14d
 
 section Pointer
- ❣   :active,03-15,14d
+ ➙   :active,03-15,14d
 ```
