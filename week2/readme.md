@@ -1,1 +1,1 @@
-# For practice types; calculations; expressions in C lanugage
+# For practice basic TYPES; CALCULATIONS; EXPRESSIONS
