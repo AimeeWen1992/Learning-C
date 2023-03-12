@@ -36,7 +36,7 @@ title Learning C lanuage process🌰
 dateFormat MM-DD
 
 section Types & Calculations & Expressions
-Basic :done,des1,01-18,7d
+ :done,des1,01-18,7d
 Advance :done,des2,after des1,7d
 section Logic expressions
 Basic :done,des1,02-01,7d
