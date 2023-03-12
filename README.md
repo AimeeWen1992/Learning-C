@@ -17,6 +17,8 @@ gantt
 title 2023 Learning C lanuage process🌰 
 dateFormat YYYY-MM-DD
 axisFormat %m-%d
+exclude weekends
+
 section semester1
         ❤️:active,01-09,100d
 section Types<br />Calculations<br />Expressions
