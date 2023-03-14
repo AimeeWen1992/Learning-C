@@ -17,19 +17,20 @@ piece of work is entirely of my own creation.
 
 #define MAX_PATH_LENGTH 70
 #define MIN_PATH_LENGTH 10
+#define MULTIPLE_PATH_LENGTH 5
 
 struct PlayerInfo
 {
     char playerSynmbol;
     int lives;
-    int treasureNum;
+    int treasure;
     int historyPosition[MAX_PATH_LENGTH];
 };
 
 struct GameInfo
 {
     int pathLength;
-    int movesAllowed;
+    int moveAllow;
     int bombPosition[MAX_PATH_LENGTH];
     int treasurePosition[MAX_PATH_LENGTH];
 };
@@ -37,13 +38,15 @@ struct GameInfo
 
 int main(void)
 {
-    struct PlayerInfo playerInfo = { '0',0,0,{0} };
+    struct PlayerInfo playerInfo = { '0',0, 0,{0} };
     struct GameInfo gameInfo = { 0, 0, {0}, {0} };
     const int maxLives = 10;
-    const int multiplePathLength = 5;
-    int maxMoves, remindMoves, nextStep = 0;
+    const float maxMoveRate = 0.75f;
+    int maxMoves, remainingMoves, nextStep = 0;
     int i, j, valid;
     int isGameOver = 0;
+    int isNewGame = 1;
+
 
     printf("================================\n"
            "         Treasure Hunt!\n"
@@ -51,7 +54,6 @@ int main(void)
     putchar('\n');
     printf("PLAYER Configuration\n"
            "--------------------\n");
-    
     printf("Enter a single character to represent the player: ");
     scanf(" %c", &playerInfo.playerSynmbol);
 
@@ -71,6 +73,7 @@ int main(void)
 
     printf("Player configuration set-up is complete\n");
     putchar('\n');
+
     printf("GAME Configuration\n"
            "------------------\n");
 
@@ -78,86 +81,72 @@ int main(void)
     {
         valid = 1;
         printf("Set the path length (a multiple of %d between %d-%d): ",
-            multiplePathLength, MIN_PATH_LENGTH, MAX_PATH_LENGTH);
+            MULTIPLE_PATH_LENGTH, MIN_PATH_LENGTH, MAX_PATH_LENGTH);
         scanf("%d", &gameInfo.pathLength);
 
-        if (gameInfo.pathLength % multiplePathLength != 0 ||
+        if (gameInfo.pathLength % MULTIPLE_PATH_LENGTH != 0 ||
             gameInfo.pathLength > MAX_PATH_LENGTH ||
             gameInfo.pathLength < MIN_PATH_LENGTH)
         {
             valid = 0;
             printf("     Must be a multiple of %d and between %d-%d!!!\n",
-                multiplePathLength, MIN_PATH_LENGTH, MAX_PATH_LENGTH);
+                MULTIPLE_PATH_LENGTH, MIN_PATH_LENGTH, MAX_PATH_LENGTH);
         }
 
     } while (!valid);
 
-    maxMoves = gameInfo.pathLength * 0.75;
+    maxMoves = gameInfo.pathLength * maxMoveRate;
 
     do
     {
         valid = 1;
         printf("Set the limit for number of moves allowed: ");
-        scanf("%d", &gameInfo.movesAllowed);
+        scanf("%d", &gameInfo.moveAllow);
 
-        if (gameInfo.movesAllowed < playerInfo.lives || gameInfo.movesAllowed > maxMoves)
+        if (gameInfo.moveAllow < playerInfo.lives || gameInfo.moveAllow > maxMoves)
         {
             valid = 0;
             printf("    Value must be between %d and %d\n", playerInfo.lives, maxMoves);
         }
 
     } while (!valid);
-
-    // :::::::::
-    remindMoves = gameInfo.movesAllowed;
-
     putchar('\n');
+
     printf("BOMB Placement\n"
            "--------------\n");
     printf("Enter the bomb positions in sets of %d where a value\n"
-        "of 1=BOMB, and 0=NO BOMB. Space-delimit your input.\n"
-        "(Example: 1 0 0 1 1) NOTE: there are %d to set!\n",
-        multiplePathLength, gameInfo.pathLength);
-/*
-    for (i = 0; i < gameInfo.pathLength; i)
-    {
-        printf("   Positions [%2d-%2d]: ", i + 1, i + 5);
-        for (j = 0; j < multiplePathLength; j++)
-        {
-            scanf("%d", &gameInfo.bombPosition[i]);
-            i++;
+           "of 1=BOMB, and 0=NO BOMB. Space-delimit your input.\n"
+           "(Example: 1 0 0 1 1) NOTE: there are %d to set!\n",
+           MULTIPLE_PATH_LENGTH, gameInfo.pathLength);
 
+    for (i = 0; i < gameInfo.pathLength; i += MULTIPLE_PATH_LENGTH)
+    {
+        printf("   Positions [%2d-%2d]: ", i + 1, i + MULTIPLE_PATH_LENGTH);
+
+        for (j = 0; j < MULTIPLE_PATH_LENGTH; j++)
+        {
+            scanf("%d", &gameInfo.bombPosition[i + j]);
         }
     }
-*/
-
-
-    for (i = 0; i < gameInfo.pathLength / multiplePathLength; i++)
-    {
-        printf("   Positions [%2d-%2d]: ", 1 * (i + 1), (i + multiplePathLength)*i);
-        scanf("%d", &gameInfo.bombPosition[i]);
-         
-    }
-
 
     printf("BOMB placement set\n");
+
     putchar('\n');
 
     printf("TREASURE Placement\n"
-        "------------------\n");
+           "------------------\n");
     printf("Enter the treasure placements in sets of %d where a value\n"
-        "of 1=TREASURE, and 0=NO TREASURE. Space-delimit your input.\n"
-        "(Example: 1 0 0 1 1) NOTE: there are %d to set!\n",
-        multiplePathLength, gameInfo.pathLength);
+           "of 1=TREASURE, and 0=NO TREASURE. Space-delimit your input.\n"
+           "(Example: 1 0 0 1 1) NOTE: there are %d to set!\n",
+           MULTIPLE_PATH_LENGTH, gameInfo.pathLength);
 
-    for (i = 0; i < gameInfo.pathLength; i)
+    for (i = 0; i < gameInfo.pathLength; i += MULTIPLE_PATH_LENGTH)
     {
-        printf("   Positions [%2d-%2d]: ", i + 1, i + 5);
-        for (int j = 0; j < multiplePathLength; j++)
-        {
-            scanf("%d", &gameInfo.treasurePosition[i]);
-            i++;
+        printf("   Positions [%2d-%2d]: ", i + 1, i + MULTIPLE_PATH_LENGTH);
 
+        for (j = 0; j < MULTIPLE_PATH_LENGTH; j++)
+        {
+            scanf("%d", &gameInfo.treasurePosition[i + j]);
         }
     }
 
@@ -166,15 +155,16 @@ int main(void)
     printf("GAME configuration set-up is complete...\n");
     putchar('\n');
     printf("------------------------------------\n"
-        "TREASURE HUNT Configuration Settings\n"
-        "------------------------------------\n");
+           "TREASURE HUNT Configuration Settings\n"
+           "------------------------------------\n");
     printf("Player:\n");
-    printf("   Symbol   : %c\n", playerInfo.playerSynmbol);
-    printf("   Lives    : %d\n", playerInfo.lives);
-    printf("   Treasure : [ready for gameplay]\n");
-    printf("   History  : [ready for gameplay]\n");
+    printf("   Symbol     : %c\n", playerInfo.playerSynmbol);
+    printf("   Lives      : %d\n", playerInfo.lives);
+    printf("   Treasure   : [ready for gameplay]\n");
+    printf("   History    : [ready for gameplay]\n");
     putchar('\n');
-    printf("   Game:\n");
+
+    printf("Game:\n");
     printf("   Path Length: %d\n", gameInfo.pathLength);
     printf("   Bombs      : ");
 
@@ -182,6 +172,7 @@ int main(void)
     {
         printf("%d", gameInfo.bombPosition[i]);
     }
+
     putchar('\n');
 
     printf("   Treasure   : ");
@@ -190,34 +181,42 @@ int main(void)
     {
         printf("%d", gameInfo.treasurePosition[i]);
     }
-    putchar('\n');
 
+    putchar('\n');
+    putchar('\n');
     printf("====================================\n"
            "~ Get ready to play TREASURE HUNT! ~\n"
            "====================================\n");
+    
+    remainingMoves = gameInfo.moveAllow;
 
-
-//part-2-----------------------------------------------------------------
-
+    isNewGame = 1;
     while (isGameOver == 0)
     {
-        // Record what's the player's position
-        printf("  ");
 
-        for (i = 0; i < gameInfo.pathLength; i++)
+        if (isNewGame == 1)
         {
-            if (gameInfo.movesAllowed - remindMoves != 0 && nextStep - 1 == i)
-            {
-                printf("%c", playerInfo.playerSynmbol);
-            }
-            else
-            {
-                printf(" ");
-            }
+            printf("\n");
+            isNewGame = 0;
         }
-        putchar('\n');
-        
-        // Reveal history position and check what's hidden behind
+        else
+        {
+            printf("  ");
+
+            for (i = 0; i < nextStep; i++)
+            {
+                if (gameInfo.moveAllow - remainingMoves != 0 && nextStep - 1 == i)
+                {
+                    printf("%c", playerInfo.playerSynmbol);
+                }
+                else
+                {
+                    printf(" ");
+                }
+            }
+            putchar('\n');
+        }
+
         printf("  ");
 
         for (i = 0; i < gameInfo.pathLength; i++)
@@ -228,10 +227,12 @@ int main(void)
                 {
                     if (gameInfo.treasurePosition[i] == 1)
                     {
+
                         printf("&");
                     }
                     else
                     {
+
                         printf("!");
                     }
                 }
@@ -239,6 +240,7 @@ int main(void)
                 {
                     if (gameInfo.treasurePosition[i] == 0)
                     {
+
                         printf(".");
                     }
                     else
@@ -254,8 +256,6 @@ int main(void)
         }
         putchar('\n');
 
-
-        // Position ruler (major), promot evey 10 postions..
         printf("  ");
 
         for (i = 0; i < gameInfo.pathLength; i++)
@@ -271,7 +271,6 @@ int main(void)
         }
         putchar('\n');
         
-        // Position ruler(minor), starting from 1 to 9..
         printf("  ");
 
         for (i = 0; i < gameInfo.pathLength; i++)
@@ -279,26 +278,18 @@ int main(void)
             printf("%d", (i+1) % 10);
         }
 
-        
-
-//-------------------------------------------------------------------------------
-
-
-
         putchar('\n');
         printf("+---------------------------------------------------+\n");
-        printf("  Lives: %2d  | Treasures: %2d  | Moves Remaining: %2d\n",
-                 playerInfo.lives, playerInfo.treasureNum, remindMoves);
+        printf("  Lives: %2d  | Treasures: %2d  |  Moves Remaining: %2d\n",
+                 playerInfo.lives, playerInfo.treasure, remainingMoves);
         printf("+---------------------------------------------------+\n");
 
-        if (playerInfo.lives == 0 || remindMoves == 0)
+        if (playerInfo.lives == 0 || remainingMoves == 0)
         {
             isGameOver = 1;
         }
-
-        if (isGameOver == 0)
+        else
         {
-
             do
             {
                 valid = 1;
@@ -319,7 +310,7 @@ int main(void)
 
             if (playerInfo.historyPosition[nextStep - 1] == 1)
             {
-                printf(" Dope! You've been here before!\n");
+                printf("Dope! You've been here before!\n");
             }
             else
             {
@@ -334,21 +325,24 @@ int main(void)
                     else
                     {
                         printf("[$] $$$ Found Treasure! $$$ [$]\n");
-                        playerInfo.treasureNum++;
+                        playerInfo.treasure++;
                     }
                 }
                 else
                 {
-                    printf("[!] !!! BOOOOOM !!! [!]\n");
-                    playerInfo.lives--;
-
                     if (gameInfo.treasurePosition[nextStep - 1] == 1)
                     {
+                        printf("[&] !!! BOOOOOM !!! [&]\n");
                         printf("===============> [&] $$$ Life Insurance Payout!!! [&]\n");
-                        playerInfo.treasureNum++;
+                        playerInfo.treasure++;
                     }
+                    else
+                    {
+                        printf("[!] !!! BOOOOOM !!! [!]\n");
+                    }
+                    playerInfo.lives--;
                 }
-                remindMoves--;
+                remainingMoves--;
             }
             putchar('\n');
 
@@ -357,7 +351,7 @@ int main(void)
                 printf("No more LIVES remaining!\n");
                 putchar('\n');
             }
-            else if (remindMoves < 1)
+            else if (remainingMoves < 1)
             {
                 printf("No more MOVES remaing!\n");
                 putchar('\n');
