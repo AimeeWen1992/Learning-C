@@ -9,8 +9,8 @@
   - Advance 
 - Array ✅
 - Structures ✅
-- Function
-- Pointer
+- Function ✅
+- Pointer ✅
 
 
 ## Gantt Chart
@@ -37,8 +37,9 @@ section Structures
  ➙      :done,03-08,7d
 
 section Function
- ➙   :active,03-15,14d
+ ➙   :done,03-15,14d
 
 section Pointer
- ➙   :active,03-15,14d
+ ➙   :done,03-15,14d
+ 
 ```
